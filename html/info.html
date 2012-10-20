@@ -1,0 +1,103 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>Demo application</title> 
+	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+	    <meta name="apple-mobile-web-app-capable" content="yes"/>
+	    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+	
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+		<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+		
+		
+		<script src="../lib/iscroll-4.2.js"></script>
+
+		<link rel="stylesheet" href="../lib/jqm_plugin/jquery.mobile.iscrollview.css"/>
+		<link rel="stylesheet" href="../lib/jqm_plugin/jquery.mobile.iscrollview-pull.css"/>
+
+		<script src="../lib/jqm_plugin/jquery.mobile.iscrollview.js"></script>
+		<!-- js render for templating-->
+		<script src="../lib/jsrender.js"></script>
+		<!-- Plugins END -->
+			
+</head> 
+<body>
+
+	<div data-role="page" id="infoPage">
+		<!-- info list template-->
+		<script id="infoTmpl" type="text/x-jquery-tmpl">
+			<li id="{{:nodeId}}">
+				<a href="#">
+					<h3>{{:title}}</h3>
+					<p>{{:intro}}</p>
+				</a>
+			</li>
+		</script>
+		<!-- info details template-->
+		<script id="infoDetailsTmpl" type="text/x-jquery-tmpl">
+
+		<div data-role="page" id="{{:pageId}}" data-add-back-btn="true" class="infoDetails">
+
+			<div data-role="header" data-position="fixed">
+				<h1>info</h1>
+			</div>
+
+			<div data-iscroll="" data-role="content" >  
+					<img src="{{:imgDetails}}"/>
+					<h1 class="title">{{:title}}</h1>
+					<span class="date">{{:pubDate}}</span>
+					<p style="clear:both;"></p>
+					{{:body}}
+			</div>
+				<div data-id="tabbar" data-role="footer"  data-position="fixed" data-tap-toggle="false">
+					<div data-role="navbar">
+					<ul >
+						<li><a href="#">Home</a></li>
+						<li><a href="news.html">News</a></li>
+						<li><a href="info.html" class="ui-btn-active ui-state-persist">info</a></li>
+						</ul>
+					</div>
+				</div>
+		</div>
+		</script>
+
+		<script src="../scripts/info.js"></script>
+
+		<div data-role="header" data-position="fixed">
+			<h1>
+				info
+			</h1>
+		</div>
+		<div data-iscroll="" data-role="content">
+			<ul data-role="listview" id="infoList"></ul>
+		</div>
+		<div data-id="tabbar" data-role="footer" data-position="fixed" data-tap-toggle="false">
+			<div data-role="navbar">
+				<ul>
+					<li>
+						<a href="../index.html">Home</a>
+					</li>
+					<li>
+						<a href="news.html" >News</a>
+					</li>
+					<li>
+						<a href="info.html" class="ui-btn-active ui-state-persist">Info</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div><!-- /page -->
+
+
+	</body>
+	</html>
+
+
+
+
+
+</body>
+</html>
+
